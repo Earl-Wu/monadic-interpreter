@@ -2,10 +2,6 @@
 A simple interpreter with typechecker for F♭, a pure functional language,
 implemented using monads.
 
-### Prerequisites
-
-Requires dequeue-0.1.12
-
 ### How to Build
 
 run `build.sh`
