@@ -8,10 +8,10 @@ import Parser
 
 main :: IO ()
 main = do
-  text <- getContents
+  text <- getLine
   let tokenList = alexScanTokens text
   let ast = expr tokenList
   let typecorrect = typecheck ast
-  case typecorrect of Right r -> print $ eval ast
-                      Left str -> print $ str
-  return ()
+  case typecorrect of Right r -> case (eval ast) of Right res -> putStrLn $ show res
+                                                    Left err -> putStrLn err
+                      Left str -> putStrLn $ str
